@@ -1,16 +1,13 @@
 import json
 import tensorflow as tf
 import numpy as np
-import os
-import random
-import string
 
 from flask import Flask, request
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model('model.h5')
-feature_model = tf.keras.models.Model(model.inputs, [layer.output for layer in model.layers])
+model = tf.keras.models.load_model('Basic_model.h5')
+feature_model = tf.keras.models.Model(model.inputs, [layer.output for layer in model.layers]) # 2nd model created to output hidden layers
 
 _, (x_test, _) = tf.keras.datasets.mnist.load_data()
 x_test = x_test / 255.
