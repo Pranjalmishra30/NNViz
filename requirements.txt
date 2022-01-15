@@ -1,4 +1,4 @@
 matplotlib
 numpy
 streamlit
-tensorflow
+tensorflow-cpu
