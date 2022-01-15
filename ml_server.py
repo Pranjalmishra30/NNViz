@@ -6,7 +6,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-model = tf.keras.models.load_model('Basic_model.h5')
+model = tf.keras.models.load_model('model/Basic_model.h5')
 feature_model = tf.keras.models.Model(model.inputs, [layer.output for layer in model.layers]) # 2nd model created to output hidden layers
 
 _, (x_test, _) = tf.keras.datasets.mnist.load_data()

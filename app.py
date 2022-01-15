@@ -3,6 +3,9 @@ import json
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
+import os
+
+os.system("python3 ml_server.py")
 
 URI = 'http://127.0.0.1:5000'
 st.set_option('deprecation.showPyplotGlobalUse', False)
