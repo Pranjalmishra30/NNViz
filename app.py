@@ -3,7 +3,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-
 def GetPredictions():
     model = tf.keras.models.load_model('model/Basic_model.h5')
     feature_model = tf.keras.models.Model(model.inputs, [layer.output for layer in model.layers]) # 2nd model created to output hidden layers
@@ -16,9 +15,9 @@ def GetPredictions():
     image_arr = np.reshape(image, (1, 784))
     return feature_model.predict(image_arr), image
 
-
-
+st.set_page_config(page_title='NNViz', page_icon='🤖')
 st.set_option('deprecation.showPyplotGlobalUse', False)
+
 padding = 0
 st.markdown(f""" <style>
     .reportview-container .main .block-container{{
@@ -32,22 +31,22 @@ st.markdown(f""" <style>
 st.title('NNViz')
 
 st.markdown('''
-NNViz is a neural network visualiser. We will be able to visualise the outputs of all the layers of the neural network for any input image. A 3 layer NN model is built using the MNIST dataset.
+NNViz is a neural network visualiser. We will be able to visualise the outputs of all the layers of the neural network for any input image. Here a 3 layer NN model is built using the MNIST dataset.
 
 Click on **Show Predictions** to get started.
 ''')
 
 max =0
 
-if st.button('Show Predictions'):
+if st.button('Show Predictions 👇'):
     preds,image = GetPredictions()
     image = np.reshape(image, (28, 28))
 
-    st.markdown('## Input Image')
+    st.markdown('### Input Image')
     st.image(image, width=150)
     st.caption("Test image from the MNIST dataset")
 
-    st.markdown('## Neural Network Model running ...')
+    st.markdown('### Neural Network building ...')
 
     for layer, p in enumerate(preds):
         numbers = np.squeeze(np.array(p))
@@ -82,5 +81,5 @@ if st.button('Show Predictions'):
 
 
 
-link = 'Check out the source code [here](https://github.com/Pranjalmishra30/MNIST_WebApp)'
-# st.write(link,unsafe_allow_html=True)
+link = 'Check out the project [here](https://github.com/Pranjalmishra30/NN_Viz)'
+st.write(link,unsafe_allow_html=True)

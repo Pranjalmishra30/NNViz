@@ -1,28 +1,20 @@
 # NNViz  
-NNViz is an interactive neural network visualiser. Its built using keras and streamlit along a flask server.
+NNViz is an interactive neural network visualiser. Its built using the Keras API and streamlit for the visualisation.  
+The web app is deployed on the streamlit cloud, check it out [here](https://share.streamlit.io/pranjalmishra30/nn_viz/app.py).  
 
 ## Requirements  
-Following libraraies will need to be installed to run the project locally.  
-* [tensorflow](https://www.tensorflow.org/install)  
-* [streamlit](https://docs.streamlit.io/library/get-started/installation)  
-* [flask](https://flask.palletsprojects.com/en/2.0.x/installation/)  
+Run this command to install all dependencies  
+`pip install -r requirements.txt`  
 
 ## Running the code locally  
-```  
-    python3 ml_server.py  
+Clone the repository and run this command  
+` streamlit run app.py `  
 
-    [Open a new terminal window]  
-    streamlit run app.py
-
-```
-
-## Technologies used  
-1. Tensorflow  
-2. Keras  
-3. Flask  
-4. Streamlit  
+## Future Scope  
+1. Visualize a Convolutional Neural Network (CNN) and explore its complex architecture.  
+2. Add multipage support  
 
 ## References  
-1. Coursera [guided project]()  
+1. Coursera [guided project](https://www.coursera.org/projects/neural-network-visualizer)  
 2. streamlit [API reference](https://docs.streamlit.io/library/api-reference)  
 
