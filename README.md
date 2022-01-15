@@ -16,5 +16,6 @@ Clone the repository and run this command
 
 ## References  
 1. Coursera [guided project](https://www.coursera.org/projects/neural-network-visualizer)  
-2. streamlit [API reference](https://docs.streamlit.io/library/api-reference)  
+2. Streamlit [API reference](https://docs.streamlit.io/library/api-reference)  
+3. Deploy a [python app](https://devcenter.heroku.com/articles/getting-started-with-python)  
 
