@@ -1,6 +1,6 @@
-Flask==1.1.2
-matplotlib==3.5.0
-numpy==1.20.3
-requests==2.27.1
-streamlit==1.3.1
-tensorflow==2.4.1
+Flask
+matplotlib
+numpy
+requests
+streamlit
+tensorflow
