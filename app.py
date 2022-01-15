@@ -16,11 +16,11 @@ st.markdown(f""" <style>
     }} </style> """, unsafe_allow_html=True)
 
 
-st.title('Neural Network Visualizer')
+st.title('NNViz')
 
 st.markdown('''
-This is a neural network visualiser. We will be able to visualise the outputs of all the nodes of all
-the layers of the neural network for any given image. The MNIST dataset is used and a 3 layer NN model is built.
+NNViz is a neural network visualiser. We will be able to visualise the outputs of all the nodes of all
+the layers of the neural network for any given image. A 3 layer NN model is built using the MNIST dataset.
 
 Click on **Show Predictions** to get started.
 ''')

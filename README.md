@@ -1,5 +1,5 @@
 # NNViz  
-NNViz is a neural network visualiser web app built using keras and streamlit with a flask server. We can see the outputs of each node of each layer for any input image.
+NNViz is an interactive neural network visualiser. Its built using keras and streamlit along a flask server.
 
 ## Requirements  
 Following libraraies will need to be installed to run the project locally.  
