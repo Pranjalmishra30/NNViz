@@ -1,13 +1,23 @@
-import requests
-import json
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
-import os
+import tensorflow as tf
 
-os.system("python3 ml_server.py")
 
-URI = 'http://127.0.0.1:5000'
+def GetPredictions():
+    model = tf.keras.models.load_model('model/Basic_model.h5')
+    feature_model = tf.keras.models.Model(model.inputs, [layer.output for layer in model.layers]) # 2nd model created to output hidden layers
+
+    _, (x_test, _) = tf.keras.datasets.mnist.load_data()
+    x_test = x_test / 255.
+
+    index = np.random.choice(x_test.shape[0])
+    image = x_test[index,:,:]
+    image_arr = np.reshape(image, (1, 784))
+    return feature_model.predict(image_arr), image
+
+
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 padding = 0
 st.markdown(f""" <style>
@@ -22,8 +32,7 @@ st.markdown(f""" <style>
 st.title('NNViz')
 
 st.markdown('''
-NNViz is a neural network visualiser. We will be able to visualise the outputs of all the nodes of all
-the layers of the neural network for any given image. A 3 layer NN model is built using the MNIST dataset.
+NNViz is a neural network visualiser. We will be able to visualise the outputs of all the layers of the neural network for any input image. A 3 layer NN model is built using the MNIST dataset.
 
 Click on **Show Predictions** to get started.
 ''')
@@ -31,10 +40,7 @@ Click on **Show Predictions** to get started.
 max =0
 
 if st.button('Show Predictions'):
-    response = requests.post(URI, data={})
-    response = json.loads(response.text)
-    preds = response.get('prediction')
-    image = response.get('image')
+    preds,image = GetPredictions()
     image = np.reshape(image, (28, 28))
 
     st.markdown('## Input Image')
