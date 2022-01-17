@@ -1,6 +1,8 @@
 # NNViz  
 NNViz is an interactive neural network visualiser. Its built using the Keras API and streamlit for the visualisation.  
-The web app is deployed on heroku, check it out [here](https://nn-viz.herokuapp.com/).  
+The web app is deployed on heroku and the streamlit-cloud. Check them out-  
+[Heroku](https://nn-viz.herokuapp.com/)  
+[Streamlit-cloud](https://share.streamlit.io/pranjalmishra30/nnviz/app.py)  
 
 ## Requirements  
 Run this command to install all dependencies  
